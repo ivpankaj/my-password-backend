@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const dotenv = require('dotenv');
-const authRoutes = require('../backend/routes/auth.js')
+
 // Load environment variables from .env file
 dotenv.config();
 
@@ -20,6 +20,7 @@ mongoose.connect(process.env.DB_URI)
 
 // // Routes
 const passwordRoutes = require('./routes/passwords');
+const authRoutes = require('./routes/auth')
 app.use('/api/passwords', passwordRoutes);
 app.use('/api/auth', authRoutes);
 // Start server
